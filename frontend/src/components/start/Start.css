@@ -1,3 +1,8 @@
+* {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
 @media (min-width:905px) {
     
 .Start {
@@ -6,36 +11,30 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 
 .Start-left-content {
+    text-align: left;
     h1 {
         color: rgb(1, 84, 249);
-        margin: 20px;
     }
-    h3,p,button {
-        margin: 20px;
-    }
-    text-align: left;
-    margin-left:3%;
     max-width: 50%;
 }
 
-.Start-right-content  {
-    margin-right:2%;
-}
+
 }
 
 .Start-right-content img{
-    height: 400px;
-    width: 400px;
+    height: 100%;
+    width: 100%;
     border-radius: 70%;
     border:10px solid rgb(1, 84, 249);
 }
 
 
+
+/* From here, the css code for mobile devices start, now hereon the mobile devices code will be written. */
 @media(max-width:905px) {
 
     .Start {
@@ -51,19 +50,23 @@
     .Start-left-content {
         h1 {
             color: rgb(1, 84, 249);
-            margin: 20px;
+            /* margin: 20px; */
+            margin-top: 2%;
         }
         h3,p,button {
-            margin: 20px;
+            /* margin: 20px; */
+            margin-top: 5%;
         }
         text-align: left;
         margin-left:3%;
     }
     
     .Start-right-content  {
-        margin-right:2%;
+        /* margin-right:2%; */
         img {
             margin-top: 10%;
+            width: 90%;
+            height: 90%;
         }
     }
 
