@@ -1,7 +1,30 @@
 .App {
   text-align: center;
+  font-size: larger;
 }
 
+body {
+  background-color: black;
+  color: white;
+}
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(1, 84, 249);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+}
+button:hover {
+  transform: scale(1.1);
+  transition: 0.1s;
+  background-color: rgb(38, 1, 249);
+}
+button:active {
+  cursor: pointer;
+  box-shadow: -5px 3px 10px grey;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +58,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@media (max-width:905px) {
+  
 }
