@@ -1,5 +1,5 @@
 
-
+/* This is for the devices like laptop, pc etc. */
 @media(min-width:905px){
     .about-me-section-1 h1 {
         text-align: center;
@@ -13,7 +13,7 @@
         width: 70%;
         text-align: left;
         p {
-            margin: 2%;
+            margin: 4%;
         }
     }
     .about-me-section-2 {
@@ -24,6 +24,8 @@
     }
 }
 
+
+/* This is for the devices like mobile phone,tablet etc. */
 @media(max-width:904px){
     .about-me-section {
         margin-left: 1%;

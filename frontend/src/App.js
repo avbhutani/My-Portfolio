@@ -3,7 +3,7 @@ import './App.css';
 import Start from './components/start/Start';
 import FloatingNavbar from './components/floatingNavbar/FloatingNavbar'
 import About from './components/about/About';
-
+import Contact from './components/contactMe/Contact';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       {/* <Navbar /> */}
       <Start />
       <About />
+      <Contact />
     </div>
   );
 }
