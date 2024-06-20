@@ -36,6 +36,9 @@
     
     .about-me-section-2 {
         align-self: center;
-        
+        img {
+            height: 20px;
+            width: 20px;
+        }
     }
 }
