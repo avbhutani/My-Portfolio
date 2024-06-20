@@ -1,11 +1,11 @@
-import React from 'react'
-import './Start.css'
 
+import './Start.css'
+import Typewriter from './TypeWriter';
 const Start = ()=> {
     return (<>
         <div className='Start'>
             <div className='Start-left-content'>
-            <h1>Hi, I'm Anubhav Bhutani</h1>
+            <h1> <Typewriter text={"Hi, I'm Anubhav Bhutani"} delay={100} infinite></Typewriter></h1>
             <h3>Software Developer</h3>
             <p>I am a Seasoned Technical Architect, bringing extensive expertise as a Full-Stack Developer and Cloud SME with high level proficiency in leading the entire product lifecycle of complex software solutions, from planning and design to development, implementation, and management.
 Contact Me</p>
