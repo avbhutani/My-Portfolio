@@ -6,6 +6,7 @@
 body {
   background-color: black;
   color: white;
+  font-family: 'Roboto';
 }
 button {
   border: none;
@@ -63,4 +64,13 @@ button:active {
 
 @media (max-width:905px) {
   
+}
+
+
+.proud-things {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* margin: 10%; */
 }

@@ -18,6 +18,7 @@
 .Start-left-content {
     text-align: left;
     h1 {
+        font-weight: bold;
         color: rgb(1, 84, 249);
     }
     max-width: 50%;

@@ -1,8 +1,9 @@
 /* For laptops and pcs. */
 @media(min-width:905px){form {
+    margin: 10%;
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+    align-items: center;
     margin-left: 5%;
     padding: 40px;
     margin-bottom: 50px;
@@ -47,6 +48,7 @@
         flex-direction: column;
         align-items: baseline;
         margin-left: 5%;
+        /* margin: 10%; */
         padding: 10px;
         margin-bottom: 50px;
         margin-right: 5%;

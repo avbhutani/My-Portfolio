@@ -1,0 +1,113 @@
+@media(min-width:905px) {.collapsible {
+    font-size:larger;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(16, 21, 30);
+    border-left: 8px solid blue;
+    border-right: 8px solid blue; 
+    transition: 2s;
+    width: 70%;
+}
+
+.collapsible-content {
+    padding: 1rem;
+    text-align: left;
+    background-color: rgb(16, 21, 30);
+    cursor: pointer;
+}
+
+.collapsible-header-text {
+    text-align: left;
+    background-color: rgb(16, 21, 30);
+    padding: 1rem;
+    display: flex;
+
+    padding-left:0;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.collapsible-header-1 {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+.collapsible-header-2 {
+    font-size:20px;
+}
+
+.collapsible-header-text {
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+    font-weight: bold;
+  }
+  .collapsible-header-text:hover {
+    border-radius: 10px;
+    border-left: 8px solid blue;
+    border-right: 8px solid blue; 
+    transform: scale(1.1);
+    transition: 0.1s;
+  }
+
+}
+
+
+
+@media(max-width:905px) {
+    .collapsible {
+    font-size:medium;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(16, 21, 30);
+    border-left: 8px solid blue;
+    border-right: 8px solid blue; 
+    transition: 2s;
+    width: 90%;
+}
+
+.collapsible-content {
+    padding: 1rem;
+    text-align: left;
+    background-color: rgb(16, 21, 30);
+    cursor: pointer;
+}
+
+.collapsible-header-text {
+    text-align: left;
+    background-color: rgb(16, 21, 30);
+    padding: 1rem;
+    display: flex;
+    font-size: medium;
+    padding: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.collapsible-header-1 {
+    font-weight: bolder;
+    /* font-size: 20px; */
+}
+
+
+.collapsible-header-2 {
+    /* font-size:20px; */
+    margin-left: 1%;
+}
+
+.collapsible-header-text {
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+    font-weight: bold;
+  }
+  .collapsible-header-text:hover {
+    border-radius: 10px;
+    border-left: 8px solid blue;
+    border-right: 8px solid blue; 
+    transform: scale(1.1);
+    transition: 0.1s;
+  }
+
+}
