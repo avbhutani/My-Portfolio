@@ -5,7 +5,7 @@ const resumeURL = 'https://drive.google.com/file/d/1JKmzIYZiAGic0vqC3MaWmLnS8Zjn
 const About = ()=> {
     const downloadFile = () => {
         window.open(resumeURL,"_blank")
-      }
+    }
     return (
         <>
             <div className='about-me-section'>
