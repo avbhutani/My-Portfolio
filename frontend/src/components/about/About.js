@@ -1,8 +1,10 @@
 import React from 'react'
 import './About.css'
+const resumeURL = 'https://drive.google.com/file/d/1JKmzIYZiAGic0vqC3MaWmLnS8ZjnJb7R/view?usp=drive_link'
+
 const About = ()=> {
     const downloadFile = () => {
-        window.location.href = "https://drive.google.com/file/d/1JKmzIYZiAGic0vqC3MaWmLnS8ZjnJb7R/view?usp=drive_link"
+        window.open(resumeURL,"_blank")
       }
     return (
         <>
