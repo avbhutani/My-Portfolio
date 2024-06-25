@@ -4,8 +4,8 @@ const Contact = () => {
   return (
     <>
       <div className="contact-me">
-        <form action="https://formspree.io/f/mrbzzpew" method="POST">
           <h1>Contact Me</h1>
+        <form action="https://formspree.io/f/mrbzzpew" method="POST">
           <div>
             <span>Name:</span>
             <input

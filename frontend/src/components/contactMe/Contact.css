@@ -1,6 +1,14 @@
 /* For laptops and pcs. */
-@media(min-width:905px){form {
+
+@media(min-width:905px){
+    .contact-me h1 {
+        text-align: center;
+        margin-top: 10%;
+        font-size: 250px;
+    }
+    form {
     margin: 10%;
+    margin-top:0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,9 +21,7 @@
     border-radius: 30px;
     color: white;
     background-color: black;
-    h1 {
-        align-self: center;
-    }
+    
     div {
         font-size: larger;
         display: flex;
