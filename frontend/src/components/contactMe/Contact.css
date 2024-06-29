@@ -1,26 +1,37 @@
 /* For laptops and pcs. */
-@media(min-width:905px){form {
+
+@media(min-width:905px){
+    .contact-me h1 {
+        text-align: center;
+        margin-top: 10%;
+        font-size: 250px;
+    }
+    form {
     margin: 10%;
+    margin-top:0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-left: 5%;
+    max-width: 80%;
     padding: 40px;
+    margin-left:10%;
     margin-bottom: 50px;
-    margin-right: 5%;
-    background-color: rgb(50, 47, 47);
-    h1 {
-        align-self: center;
-    }
+    border:5px solid rgb(1, 84, 249);
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+    
     div {
-        font-size: large;
+        font-size: larger;
         display: flex;
         flex-direction: row;
+        align-items: baseline;
         margin: 10px;
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-evenly;
         input {
-            padding: 10px;
+            padding: 5px;
             background-color: black;
             color: white;
             width: 100%;
@@ -52,7 +63,8 @@
         padding: 10px;
         margin-bottom: 50px;
         margin-right: 5%;
-        background-color: rgb(50, 47, 47);
+        border: 5px solid rgb(1, 84, 249);
+        background-color: black;
         h1 {
             align-self: center;
         }
