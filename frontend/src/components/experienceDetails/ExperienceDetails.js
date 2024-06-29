@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import './ExperienceDetails.css'
 const ExperienceDetails = (props) => {
   return (

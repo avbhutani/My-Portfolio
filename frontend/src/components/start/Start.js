@@ -14,7 +14,7 @@ Contact Me</p>
             </button>
             </div>
             <div className='Start-right-content'>
-                <img src="https://media.licdn.com/dms/image/D5635AQEPvigyBNvLQw/profile-framedphoto-shrink_400_400/0/1700494624777?e=1719500400&v=beta&t=LO8c9_Kzj-u9z5_4tctYwMFbzzn3i4mM1qDvkrp3HJ0" alt="ok" />
+                <img src="https://media.licdn.com/dms/image/D5635AQEPvigyBNvLQw/profile-framedphoto-shrink_400_400/0/1700494624777?e=1720252800&v=beta&t=eF9qAa2K_2XBdlVjRd0eddW4Ole_crYM1FASRNjJ16E" alt="ok" />
             </div>
         </div>
     </>)
