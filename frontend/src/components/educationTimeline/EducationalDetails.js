@@ -7,12 +7,14 @@ const EducationalDetails = (props) => {
     {/* <h1>Educational Details</h1> */}
       <div className="education-card">
         <div className="education-card-1">
-            <h2>{props.stage}</h2>
+            <h3>{props.stage}</h3>
         </div>
         <div className="education-card-2">
-            <h3>{props.instituteName}</h3>
-            <h4>{props.session}</h4>
-            <h5>{props.grade}</h5>
+            <h4>{props.instituteName}</h4>
+            <div>
+            <h5>{props.session}</h5>
+            <h6>{props.grade}</h6>
+            </div>
         </div>
       </div>
     </>

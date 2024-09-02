@@ -9,7 +9,7 @@
 .Start {
     margin-top:13%;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: center;
 }
@@ -27,11 +27,13 @@
 
 }
 
-.Start-right-content img{
-    height: 100%;
-    width: 100%;
+.Start-right-content {
+    img {
+    height: 60%;
+    width: 60%;
     border-radius: 70%;
     border:10px solid rgb(1, 84, 249);
+    }
 }
 
 
