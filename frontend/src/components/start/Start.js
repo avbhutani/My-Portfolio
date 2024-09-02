@@ -8,7 +8,7 @@ const Start = ()=> {
             <div className='Start-left-content'>
             <h1> <Typewriter text={"Hi, I'm Anubhav Bhutani"} delay={100} infinite></Typewriter></h1>
             <h3>Software Developer</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quos ab quibusdam perferendis tempore officia dolores obcaecati iste enim? Enim suscipit animi rem ut, itaque nesciunt asperiores nam eveniet quisquam omnis molestiae consequatur praesentium?</p>
+            <p>I'm Anubhav Bhutani, a B.Tech Computer Science student specializing in AI/ML. I love coding and have hands-on experience with Java, Python, ReactJS, and more. Recently, I honed my skills at Fidelity Investments. I'm passionate about creating impactful tech solutions! </p>
             <button>
                 Contact Me &#128231;
             </button>
