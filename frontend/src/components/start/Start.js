@@ -1,6 +1,7 @@
 
 import './Start.css'
 import Typewriter from './TypeWriter';
+import image1 from './img.png'
 const Start = ()=> {
     return (<>
         <div className='Start'>
@@ -13,7 +14,7 @@ const Start = ()=> {
             </button>
             </div>
             <div className='Start-right-content'>
-                <img src="https://media.licdn.com/dms/image/D5635AQEPvigyBNvLQw/profile-framedphoto-shrink_400_400/0/1700494624777?e=1720252800&v=beta&t=eF9qAa2K_2XBdlVjRd0eddW4Ole_crYM1FASRNjJ16E" alt="ok" />
+                <img src={image1} alt="Portfolio Image" />
             </div>
         </div>
     </>)
