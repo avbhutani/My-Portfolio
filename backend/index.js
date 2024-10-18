@@ -1,24 +1,17 @@
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
-const Contact = require('./src/controllers/Contact.controller')
+const SubmitForm = require('./src/controllers/SubmitForm.controller')
 require('dotenv').config()
-
-app.get('/',(req,res)=>{
-    res.json({message:'Ok this is the response in json'})
-
-    console.log('/ was hit.')
-})
-// app.use(bodyParser)
-app.post('/contact',Contact);
-// Used for the contact page.
-app.get('/contact',(req,res)=> {
-    res.send('Ok')
-    console.log('The API was hit!')
-})
+const cors = require('cors')
 
 
+app.use(cors())
+app.use(bodyParser.json())
 
-app.listen((process.env.PORT || 8000), ()=> {
-    console.log(`Server is listening at ${process.env.PORT}`)
+app.post('/submitForm',SubmitForm);
+
+
+app.listen(process.env.PORT || 4000, ()=> {
+    console.log(`Server is listening at ${process.env.PORT || 4000}`)
 })

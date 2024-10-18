@@ -4,6 +4,13 @@
   h1 {
     font-weight: bolder;
     font-size:40px;
+    transition: ease 0.5s;
+  }
+  h1:hover {
+    cursor: pointer;
+    text-shadow:0 0 10px white;
+    transform: scale(1.2);
+
   }
 }
 

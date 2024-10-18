@@ -5,7 +5,8 @@
         text-align: center;
     }
     .about-me-section {
-        margin: 13% auto;
+        margin:13% auto;
+        
         display: flex;
         flex-direction: column;
         align-items: center;
