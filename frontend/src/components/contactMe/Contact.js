@@ -11,7 +11,7 @@ const Contact = () => {
     event.preventDefault()
     
     try {
-      const res = await axios.post('http://localhost:4000/submitForm',{
+      const res = await axios.post('https://my-portfolio-ouo6.vercel.app/submitForm',{
         name:name,
         email:email,
         content:content
