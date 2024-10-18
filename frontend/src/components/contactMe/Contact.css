@@ -1,4 +1,4 @@
-/* For laptops and pcs. */
+/* For laptops and pcs.
 
 @media(min-width:905px){
     .contact-me h1 {
@@ -49,7 +49,7 @@
 }}
 
 /* For mobile devices. */
-@media(max-width:905px){
+/* @media(max-width:905px){
     .contact-me {
         margin-top: 20%;
     }
@@ -60,7 +60,7 @@
         align-items: baseline;
         margin-left: 5%;
         /* margin: 10%; */
-        padding: 10px;
+        /* padding: 10px;
         margin-bottom: 50px;
         margin-right: 5%;
         border: 5px solid rgb(1, 84, 249);
@@ -86,4 +86,34 @@
             }
         }
     }
+}  */
+
+
+.contact-me-form {
+    display: grid;
+    gap: 10px;
+    border: solid 5px;
+    border-radius: 10px;
+    border-color: rgb(1, 84, 249);
+    margin-bottom: 150px;
+    padding: 50px;
+    font-size: 20px;
+    color: white;
+    input {
+        color: white;
+        background-color: black;
+    }
+    
+    textarea {
+        background-color: black;
+        color: white;
+    }
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.contact-me-form-2 {
+    display: grid;
+    grid-template-rows: 3;
 }

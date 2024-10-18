@@ -1,40 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
+import axios from 'axios'
+
 const Contact = () => {
+  const [name,setName] = useState()
+  const [email,setEmail] = useState()
+  const [content,setContent] = useState()
+
+  async function handleFormSubmission(event) {
+    event.preventDefault()
+    
+    try {
+      const res = await axios.post('http://localhost:4000/submitForm',{
+        name:name,
+        email:email,
+        content:content
+      })
+      console.log('Submitted')
+    }
+    catch(error) {
+      console.log(error)
+    }
+
+  }
+
+  async function handleScroll(e) {
+    console.log('scrolled')
+  }
   return (
     <>
-      <div className="contact-me">
-          <h1>Contact Me</h1>
-        <form action="https://formspree.io/f/mrbzzpew" method="POST">
-          <div>
-            <span>Name:</span>
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter Your Name..."
-              required
-            />
-          </div>
-          <div>
-            <span>Email:</span>
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your Email..."
-              required
-            />
-          </div>
-          <div>
-            <span>Message:</span>
-            <textarea
-              name="message"
-              placeholder="Enter Your Query..."
-              required
-            ></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+        <h1>Contact Me</h1>
+      <form className="contact-me-form" onScroll={handleScroll}> 
+        
+
+        <input type="text" placeholder="Name" onChange={(e)=> setName(e.target.value)} className="form-name"/>
+        <input type="email" placeholder="Email" onChange={(e)=> setEmail(e.target.value)}  className="form-email"/>
+        <textarea cols="30" rows="10" placeholder="Message" onChange={(e)=> setContent(e.target.value)} className="form-textarea"></textarea>
+        <button onClick={handleFormSubmission}>Submit</button>
+       
+      </form>
     </>
   );
 };
