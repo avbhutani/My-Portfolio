@@ -30,7 +30,7 @@ const Contact = () => {
   return (
     <>
         <h1>Contact Me</h1>
-      <form className="contact-me-form" onScroll={handleScroll}> 
+      <form className="contact-me-form" id="contact-me-form" onScroll={handleScroll}> 
         
 
         <input type="text" placeholder="Name" onChange={(e)=> setName(e.target.value)} className="form-name"/>
