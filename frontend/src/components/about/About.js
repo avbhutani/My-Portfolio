@@ -1,7 +1,7 @@
 import React from 'react'
 import './About.css'
 
-const resumeURL = 'https://drive.google.com/file/d/1JKmzIYZiAGic0vqC3MaWmLnS8ZjnJb7R/view?usp=sharing'
+const resumeURL = 'https://drive.google.com/file/d/17m1Iu6O52ZcCLAL1V-EGZ6A5UzhGC0RS/view?usp=sharing'
 
 const About = ()=> {
     const downloadFile = () => {
