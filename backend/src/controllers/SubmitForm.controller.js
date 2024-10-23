@@ -17,7 +17,9 @@ const SubmitForm = (req,res)=> {
         from : "ab.anubhav19@gmail.com",
         to : "avbhutani3@gmail.com",
         subject : `Contact Request on Portfolio - ${req.body.name}`,
-        text : req.body.content
+        text : `Contact Details requested on ${req.body.email},
+        ${req.body.content}
+        `
     };
 
     auth.sendMail(receiver, (error, emailResponse) => {
