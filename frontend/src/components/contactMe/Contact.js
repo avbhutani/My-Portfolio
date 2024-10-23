@@ -17,6 +17,7 @@ const Contact = () => {
     }
     setLoading(true)
     setMessage('')
+    
     try {
       const res = await axios.post('https://my-portfolio-ouo6.vercel.app/submitForm',{
         name:name,

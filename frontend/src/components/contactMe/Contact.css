@@ -110,10 +110,21 @@
     }
     margin-left: 10%;
     margin-right: 10%;
-
 }
 
 .contact-me-form-2 {
     display: grid;
     grid-template-rows: 3;
+}
+
+
+@media(max-width:500px) {
+    .contact-me-form {
+        display: grid;
+        max-width: 500px;
+        min-width: none;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 10px;
+    }
 }
