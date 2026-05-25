@@ -3,9 +3,8 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-left: 10; 
     /* margin: top right bottom left */
-    margin: 20% 10% 0 1%; 
+    margin: 20% 10% 5% 10%; 
 }
 
 .about-me-section-2 {
@@ -26,7 +25,6 @@
     .about-me-section {
         margin: 13% auto;
         align-items: center;
-        margin-left: 10px;
         justify-content: space-between;
         width: 70%;
         
