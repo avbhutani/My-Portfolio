@@ -13,7 +13,6 @@ const ExperienceDetails = (props) => {
             <h3>{props.companyName}</h3>
             <h4>{props.duration}</h4>
             <h5>{props.location}</h5>
-            <button>View Responsibilities</button>
         </div>
       </div>
     </>
