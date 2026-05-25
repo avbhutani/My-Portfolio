@@ -1,5 +1,4 @@
-import React from 'react'
-import { useCollapse } from 'react-collapsed'
+
 import './ProudThings.css'
 function ProudThings(props) {
 

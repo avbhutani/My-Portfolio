@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./App.css";
 // import Navbar from './components/navbar/Navbar'
 import Start from "./components/start/Start";
@@ -6,10 +6,9 @@ import FloatingNavbar from "./components/floatingNavbar/FloatingNavbar";
 import About from "./components/about/About";
 
 import Contact from "./components/contactMe/Contact";
-import ProudThings from "./components/proudThings/ProudThings";
 import EducationalDetails from "./components/educationTimeline/EducationalDetails";
 import ExperienceDetails from "./components/experienceDetails/ExperienceDetails";
-import { Slide, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 // import EducationalTimeline from './components/educationTimeline/EducationalTimeLine'
 // const About = React.lazy(() => import('./components/about/About'));
 

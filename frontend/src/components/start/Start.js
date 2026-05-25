@@ -42,7 +42,7 @@ const Start = () => {
           </button>
         </div>
         <div className="Start-right-content">
-          <img src={image1} alt="Portfolio Image" />
+          <img src={image1} alt="Portfolio" />
         </div>
       </div>
     </>

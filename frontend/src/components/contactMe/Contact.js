@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import  { useState } from "react";
 import "./Contact.css";
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const [name,setName] = useState()
   const [email,setEmail] = useState()
   const [content,setContent] = useState()
-  const [loading,setLoading] = useState(false)
-  const [message,setMessage] = useState('')
+  const [setLoading] = useState(false)
   async function handleFormSubmission(event) {
     event.preventDefault()
     

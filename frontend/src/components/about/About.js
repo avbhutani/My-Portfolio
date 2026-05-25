@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './About.css'
 
 const resumeURL = 'https://drive.google.com/file/d/1VSWs7sh01nxTv3qFtlqwfh1U_3GZust0/view?usp=sharing'
@@ -21,7 +21,7 @@ const About = ()=> {
                     <br />
                 </div>
                 <div className='about-me-section-2'>
-                    <button onClick={downloadFile} download>Download Resume <img src='https://cdn.iconscout.com/icon/free/png-512/free-download-1438181-1216144.png?f=webp&w=256'></img></button>
+                    <button onClick={downloadFile} download>Download Resume <img src='https://cdn.iconscout.com/icon/free/png-512/free-download-1438181-1216144.png?f=webp&w=256' alt=''></img></button>
                 </div>
             </div>
         </>
