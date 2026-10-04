@@ -42,19 +42,19 @@
   color: var(--text);
 }
 
-.monogram {
-  display: grid;
-  place-items: center;
+/* Portrait in place of the old "AB" monogram, so the header and the hero show
+   the same face. Decorative: the wrapping link already carries the name via
+   aria-label, so this needs an empty alt rather than a duplicate. */
+.avatar {
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  letter-spacing: var(--tracking-wide);
-  box-shadow: var(--shadow-accent);
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  /* Matches the hero's framing so the face sits the same way in both. */
+  object-position: center 20%;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .brandText {

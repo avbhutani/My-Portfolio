@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { navLinks, profile } from '../../data/content';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { navigateToSection, navigateToTop } from '../../utils/scroll';
+import portrait from '../../assets/profile.jpg';
 import { IconClose, IconExternal, IconMenu } from '../icons/Icons';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import s from './Header.module.css';
@@ -67,9 +68,14 @@ export default function Header() {
     <header className={s.header} id="top" data-header data-scrolled={scrolled}>
       <div className={s.inner}>
         <a className={s.brand} href="#top" onClick={goTop} aria-label={`${profile.name} — back to top`}>
-          <span className={s.monogram} aria-hidden="true">
-            {profile.initials}
-          </span>
+          <img
+            className={s.avatar}
+            src={portrait}
+            alt=""
+            width="40"
+            height="40"
+            decoding="async"
+          />
           <span className={s.brandText}>
             <span className={s.brandName}>{profile.name}</span>
             <span className={s.brandRole}>{profile.role}</span>
