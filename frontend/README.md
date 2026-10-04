@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Portfolio — frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React 18 + Vite. Single page, no router — sections are anchored and the header
+uses scroll-spy to track the active one.
 
-## Available Scripts
+```bash
+npm install
+npm run dev       # http://localhost:3000
+npm run lint      # ESLint 9 (flat config)
+npm test          # Vitest, single run
+npm run test:watch
+npm run build     # -> dist/
+npm run preview   # serve the production build locally
+```
 
-In the project directory, you can run:
+## Layout
 
-### `npm start`
+```
+src/
+├── main.jsx                  entry
+├── App.jsx                   section order + <main>
+├── data/content.js           ALL portfolio content — edit this first
+├── hooks/
+│   ├── useTheme.js           dark/light, persisted, follows the OS by default
+│   ├── useActiveSection.js   scroll-spy for the header nav
+│   ├── useReveal.js          one shared IntersectionObserver for fade-ins
+│   └── usePrefersReducedMotion.js
+├── utils/                    scroll helpers, motion query
+├── styles/
+│   ├── tokens.css            design tokens: colour, type, spacing, motion
+│   ├── global.css            reset, layout utilities, button/card primitives
+│   └── toast.css             react-toastify themed with the tokens
+└── components/
+    ├── Header/  Hero/  About/  Experience/  Education/
+    ├── Achievements/  Contact/  Footer/
+    ├── ThemeToggle/  SectionHead/  Reveal/
+    └── icons/                Icons.jsx (components) + registry.js (key → component)
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Conventions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Theming** — never hardcode a colour. Use a token from `tokens.css`. To rebrand the
+  whole site, change `--accent` and the surface/text ramps; every component follows.
+- **Styling** — CSS Modules per component, plus global classes for primitives that
+  genuinely repeat (`.btn`, `.btnPrimary`, `.card`, `.pill`, `.sectionHead`).
+- **Adding an icon** — add the component to `icons/Icons.jsx`, then register it in
+  `icons/registry.js` if it is driven by a data key. `Icons.jsx` must only export
+  components or React Fast Refresh breaks.
+- **Content** — no copy lives in components. If you find yourself adding a string to
+  a `.jsx` file, it probably belongs in `data/content.js`.
 
-### `npm test`
+## Env vars
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Variable             | Purpose                                    | Default                              |
+| -------------------- | ------------------------------------------ | ------------------------------------ |
+| `VITE_API_BASE_URL`  | Base URL of the contact-form API           | `https://my-portfolio-ouo6.vercel.app` |
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Create a `.env.local` (git-ignored) to override locally.

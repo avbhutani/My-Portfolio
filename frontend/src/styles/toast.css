@@ -1,0 +1,35 @@
+/* React-Toastify overrides so notifications inherit the portfolio's tokens. */
+
+:root {
+  --toastify-font-family: var(--font-sans);
+}
+
+.Toastify__toast {
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border);
+  background-color: var(--bg-elevated) !important;
+  color: var(--text) !important;
+  box-shadow: var(--shadow-lg) !important;
+  font-size: var(--text-base) !important;
+  font-weight: 500;
+}
+
+.Toastify__toast--success {
+  border-left: 3px solid var(--success) !important;
+}
+
+.Toastify__toast--error {
+  border-left: 3px solid var(--danger) !important;
+}
+
+.Toastify__toast--warning {
+  border-left: 3px solid var(--warning) !important;
+}
+
+.Toastify__close-button {
+  color: var(--text-subtle) !important;
+}
+
+.Toastify__progress-bar {
+  background: var(--accent) !important;
+}

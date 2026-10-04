@@ -1,34 +1,122 @@
-# Anubhav Bhutani - Portfolio Website
+# Anubhav Bhutani — Portfolio
 
-## About Me
+Personal portfolio website. A single-page React front end plus a small Express API that
+forwards contact-form messages by email.
 
-Hello! I'm **Anubhav Bhutani**, a final-year B.Tech student specializing in Computer Science with a focus on Artificial Intelligence and Machine Learning. I am passionate about software development and technology innovation, with hands-on experience in both frontend and backend development.
+- **Frontend** — React 18 + Vite, CSS Modules, dark/light theming
+- **Backend** — Express, Nodemailer, deployed as a serverless function
 
-## Skills
+---
 
-- **Programming Languages:** C/C++, Python, Java
-- **Web Development:** ReactJS, NodeJS, ExpressJS, SpringBoot
-- **Database Technologies:** SQL
-- **Other Technologies:** REST APIs, GraphQL, Git, GitHub
-- **Development Practices:** Agile (Scrum), Test Automation, Microservices
+## Quick start
 
-## Professional Experience
+Two terminals, one per package.
 
-- **Fidelity Investments:** Gained valuable industry experience in software development, focusing on enhancing application performance and optimizing data querying processes.
+```bash
+# Terminal 1 — API on http://localhost:4000
+cd backend
+npm install
+cp .env.example .env      # then fill in ID_ACCESS_PASS
+npm run dev
 
-## Projects
+# Terminal 2 — site on http://localhost:3000
+cd frontend
+npm install
+npm run dev
+```
 
-- **Maargshala (CFG Project 2024):** A prototype project aimed at empowering rural youth in the Himalayan region by providing career guidance, course recommendations, and entrepreneurship support through sections like Adventurer, Khojshala, and Swarozgar.
+The front end falls back to the deployed API URL, so the contact form still works
+without the local backend running.
 
-## Career Goals
+---
 
-I am actively seeking software development roles where I can leverage my skills in building efficient, scalable, and impactful tech solutions. I am excited about opportunities that allow me to work on both On-Premise and Cloud environments, involving .Net Core, Microservices, Node, Python, React, Angular, SQL, Analytics, and Machine Learning.
+## Editing content
 
-## Education
+**All portfolio content lives in [`frontend/src/data/content.js`](frontend/src/data/content.js).**
+You should not need to touch a component to change a job, a school, or a link.
 
-- **B.Tech in Computer Science, Specialization in AI/ML**  
-  Expected Graduation: 2025
+| To change…                          | Edit                                    |
+| ----------------------------------- | --------------------------------------- |
+| Name, role, bio, résumé link        | `profile`                               |
+| Nav items                           | `navLinks`                              |
+| GitHub / LinkedIn / email           | `socials`                               |
+| Jobs                                | `experience`                            |
+| Education                           | `education`                             |
+| Achievements                        | `achievements`                          |
 
-## Contact
+To **add a section**, append to the relevant array above, then add a matching entry to
+`navLinks` and render it in `frontend/src/App.jsx` between `<Header />` and `<Footer />`.
+Section spacing, headings, and scroll-spy active states come for free.
 
-Feel free to explore my projects and reach out if you'd like to connect or collaborate. Let's build something amazing together!
+---
+
+## Before publishing
+
+Some values are intentionally left blank so nothing unverified goes live. Search the
+repo for `TODO(owner)` — each one is a real task:
+
+- [ ] **Experience highlights** — add 2–4 concrete bullets per role in
+      `content.js`. These matter most to a hiring manager.
+- [ ] **Experience tech stacks** — fill in the `tech` arrays.
+- [ ] **LinkedIn URL** — currently `null`, so the icon is hidden.
+- [ ] **Résumé** — the current link opens a Google Drive viewer page. Host a
+      direct-download PDF instead and update `profile.resumeUrl`.
+- [ ] **Contact email** — update `socials.email` if `avbhutani3@gmail.com` should change.
+- [ ] **Canonical URL + origin** — `frontend/index.html` has no `<link rel="canonical">`.
+      `frontend/public/sitemap.xml` and `robots.txt` are schema-valid but point at
+      the RFC 2606 placeholder `example.com`; swap in the deployed front-end origin
+      (the sitemap path is already correct).
+- [ ] **OG image** — add a 1200×630 `og-image.png` to `frontend/public/` and
+      uncomment the `og:image` meta tag.
+- [ ] **`ALLOWED_ORIGIN`** — set it in the backend deployment env vars to the
+      deployed front-end origin.
+
+---
+
+## Testing
+
+```bash
+cd frontend
+npm run lint     # ESLint 9 flat config
+npm test         # Vitest + Testing Library
+npm run build    # production build to dist/
+```
+
+The suite covers content integrity, nav/section wiring, theme toggling, and the
+contact form's validation, submit, and failure paths.
+
+---
+
+## Deployment
+
+**Backend** — the included `vercel.json` deploys as a serverless function. Add
+`ID_ACCESS_PASS`, `MAIL_USER`, `MAIL_TO`, and `ALLOWED_ORIGIN` as environment
+variables in the Vercel project.
+
+**Frontend** — any static host works; the build output is `dist/`. Set
+`VITE_API_BASE_URL` at build time to point at the deployed API:
+
+```bash
+VITE_API_BASE_URL=https://your-api.vercel.app npm run build
+```
+
+---
+
+## Notes on the redesign
+
+The previous version was a Create React App build. Notable changes beyond the visual
+redesign:
+
+- Migrated from deprecated `react-scripts` to Vite, and dropped Bootstrap (loaded
+  twice — CDN *and* npm), `react-router-dom`, `react-bootstrap`, and `react-collapsed`,
+  none of which were used.
+- Fixed a nav bug where the Experience and Education icons scrolled to each
+  other's sections, and a link to a section that had been commented out.
+- The contact form used to `console.log` failures, leaving the user staring at a
+  spinner. It now validates inline, shows success and error toasts, and preserves
+  input on failure.
+- The backend used to `throw` inside an email callback, which crashed the process
+  and dropped every other in-flight request. It now validates input, honours a
+  honeypot field, rate-limits, and scopes CORS to your front-end origin.
+- Accessibility: skip link, landmark regions, labelled sections, a single `h1`,
+  visible focus rings, and full `prefers-reduced-motion` support.

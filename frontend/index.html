@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0a0d14" />
+
+    <title>Anubhav Bhutani — Software Engineer | Backend, Kubernetes &amp; Platform</title>
+    <meta
+      name="description"
+      content="Anubhav Bhutani is a backend engineer at Twilio working on distributed systems, Kubernetes migrations, observability, and platform engineering."
+    />
+    <meta name="author" content="Anubhav Bhutani" />
+
+    <!-- TODO(owner): add a 1200x630 og-image.png to public/ and uncomment.
+    <meta property="og:image" content="/og-image.png" />
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Anubhav Bhutani" />
+    <meta property="og:title" content="Anubhav Bhutani — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Backend engineer at Twilio. Distributed systems, Kubernetes, observability, and platform engineering."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Anubhav Bhutani — Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Backend engineer at Twilio. Distributed systems, Kubernetes, observability, and platform engineering."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    />
+
+    <!--
+      Runs before first paint. Resolves the theme so the page never flashes the
+      wrong colour scheme, and marks the document as scripted so scroll-reveal
+      styles only hide content when something is there to reveal it again.
+      Mirrors the logic in src/hooks/useTheme.js.
+    -->
+    <script>
+      document.documentElement.classList.add('js');
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme');
+          var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+          var theme = stored === 'light' || stored === 'dark' ? stored : prefersLight ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute('content', theme === 'light' ? '#ffffff' : '#0a0d14');
+        } catch (e) {
+          /* keep the default dark theme */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      This portfolio needs JavaScript enabled. You can still reach me at
+      avbhutani3@gmail.com.
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

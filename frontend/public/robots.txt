@@ -1,3 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# TODO(owner): replace example.com with the deployed front-end origin.
+Sitemap: https://example.com/sitemap.xml
