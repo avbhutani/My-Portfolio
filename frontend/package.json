@@ -1,6 +1,9 @@
 {
   "name": "portfolio-frontend",
   "version": "2.0.0",
+  "engines": {
+    "node": ">=20.19"
+  },
   "private": true,
   "type": "module",
   "description": "Personal portfolio website for Anubhav Bhutani",

@@ -100,6 +100,13 @@ variables in the Vercel project.
 VITE_API_BASE_URL=https://your-api.vercel.app npm run build
 ```
 
+`frontend/vercel.json` pins the Vite preset and `dist/` as the output directory.
+This matters when redeploying a project created before the CRA → Vite migration:
+Vercel keeps the framework preset from the original project, so it looks for
+`build/` and fails with *"No Output Directory named \"build\" found"*. Either the
+committed `vercel.json` or a Framework Preset of **Vite** in Project Settings →
+Build & Deployment resolves it.
+
 ---
 
 ## Notes on the redesign
