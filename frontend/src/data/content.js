@@ -17,7 +17,7 @@ export const profile = {
     'Platform Engineering',
     'Reliability & Observability',
   ],
-  location: 'Chennai, India',
+  location: 'Gurugram, Haryana, India',
   availableForWork: true,
   summary:
     'Backend engineer focused on distributed systems, infrastructure, and platform engineering. Currently at Twilio, working on Kubernetes migrations, observability, internal platforms, and reliability improvements for core services. I enjoy building systems that are simple, scalable, and practical.',
@@ -46,8 +46,8 @@ export const navLinks = [
 export const socials = {
   email: 'avbhutani3@gmail.com',
   github: 'https://github.com/avbhutani',
-  /* TODO(owner): fill in the LinkedIn profile URL, or set to null to hide. */
-  linkedin: null,
+  linkedin: 'https://www.linkedin.com/in/anubhavbhutani/',
+  /* TODO(owner): set to the X profile URL to show the icon, or leave null. */
   x: null,
 };
 
@@ -58,7 +58,7 @@ export const experience = [
     company: 'Twilio',
     companyUrl: 'https://www.twilio.com',
     duration: 'Jun 2025 — Present',
-    location: 'Remote',
+    location: 'Bengaluru, Karnataka',
     employmentType: 'Full-time',
     tech: ['Kubernetes', 'Observability', 'Platform Engineering'],
     /* TODO(owner): 2–4 concrete bullets per role. Specific beats generic. */
@@ -107,7 +107,7 @@ export const education = [
     institute: 'SRM Institute of Science and Technology',
     location: 'Chennai, Tamil Nadu',
     session: '2021 — 2025',
-    grade: 'CGPA 9.70',
+    grade: 'CGPA 9.60',
   },
   {
     id: 'dav-12',
@@ -163,17 +163,9 @@ export const achievements = [
     id: 'merit-scholarship',
     title: 'SRM JEE Merit Scholarship',
     description:
-      'Awarded a merit scholarship covering 100% of tuition fees, worth ₹7,50,000.',
+      'Awarded a merit scholarship covering 100% of tuition fees, worth ₹10 Lakhs.',
     icon: 'award',
     tag: 'Academic',
-  },
-  {
-    id: 'codestudio',
-    title: 'CodeStudio Rating 2000+',
-    description:
-      'Maintained a CodeStudio competitive-programming rating of 2000 or above.',
-    icon: 'trophy',
-    tag: 'Competitive programming',
   },
   {
     id: 'code-for-good',
@@ -182,5 +174,5 @@ export const achievements = [
       'Selected to participate in Code for Good 2024, JPMorgan Chase’s flagship hackathon for social-impact projects.',
     icon: 'spark',
     tag: 'Hackathon',
-  },
+  }
 ];

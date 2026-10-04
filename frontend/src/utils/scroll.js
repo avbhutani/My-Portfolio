@@ -54,3 +54,31 @@ export function navigateToTop(event) {
     window.history.pushState(null, '', window.location.pathname + window.location.search);
   }
 }
+
+/**
+ * Applies whatever fragment is currently in the address bar to the viewport.
+ *
+ * Needed because `navigateToSection` records history entries, and nothing else
+ * consumes them: on a Back/Forward step the URL changes but the page stays put,
+ * which is most visible on phones where the back gesture is habitual. Also
+ * corrects a cold load straight onto a deep link, where the browser's own
+ * fragment jump ignores the sticky header and hides the heading underneath it.
+ *
+ * @param {{ initial?: boolean }} [options]
+ *   `initial` marks the first sync after mount, where an empty fragment means
+ *   "leave the page where it is" rather than "jump to the top".
+ */
+export function syncFromHash({ initial = false } = {}) {
+  const id = window.location.hash.replace(/^#/, '');
+
+  if (!id) {
+    // Only a real history step scrolls to the top; on mount, stay put so a
+    // refresh at the top of the page does not jump.
+    if (!initial) {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    }
+    return;
+  }
+
+  scrollToSection(id);
+}

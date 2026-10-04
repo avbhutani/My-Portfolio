@@ -1,7 +1,11 @@
 # Anubhav Bhutani — Portfolio
 
-Personal portfolio website. A single-page React front end plus a small Express API that
+Personal portfolio website. A single-page React front end, plus an Express API that
 forwards contact-form messages by email.
+
+Visitors reach the author through **email or LinkedIn** links rather than an on-page
+form. The form component is still in the tree but is not rendered — see
+[Contact section](#contact-section).
 
 - **Frontend** — React 18 + Vite, CSS Modules, dark/light theming
 - **Backend** — Express, Nodemailer, deployed as a serverless function
@@ -58,7 +62,6 @@ repo for `TODO(owner)` — each one is a real task:
 - [ ] **Experience highlights** — add 2–4 concrete bullets per role in
       `content.js`. These matter most to a hiring manager.
 - [ ] **Experience tech stacks** — fill in the `tech` arrays.
-- [ ] **LinkedIn URL** — currently `null`, so the icon is hidden.
 - [ ] **Résumé** — the current link opens a Google Drive viewer page. Host a
       direct-download PDF instead and update `profile.resumeUrl`.
 - [ ] **Contact email** — update `socials.email` if `avbhutani3@gmail.com` should change.
@@ -82,8 +85,50 @@ npm test         # Vitest + Testing Library
 npm run build    # production build to dist/
 ```
 
-The suite covers content integrity, nav/section wiring, theme toggling, and the
-contact form's validation, submit, and failure paths.
+The suite covers content integrity, nav/section wiring, theme toggling, the
+contact form's validation, submit, and failure paths, and Back/Forward hash sync.
+
+---
+
+## Contact section
+
+`components/ContactLinks` is what the site renders. It offers two channels —
+`mailto:` and the LinkedIn profile — as whole-card links. Both come from
+`socials` in `content.js`, so changing an address or a profile URL is a
+one-line edit and needs no component change.
+
+The original form still exists at `components/Contact/Contact` and is **not
+imported by `App`**. To bring it back:
+
+1. In `App.jsx`, swap the `ContactLinks` import for `Contact`.
+2. Swap `<ContactLinks />` for `<Contact />`.
+
+`<ToastContainer>` is still mounted in `App` for exactly this reason — the form
+needs a toast host, and without it every success and failure message would
+silently vanish.
+
+Until then the API's `/submitForm` endpoint has no caller. The backend stays
+deployed and unchanged, so re-enabling the form is purely a front-end change.
+
+---
+
+## Section links, history, and deep links
+
+Nav clicks push a history entry, so `useHashNavigation` has to move the
+viewport back in step:
+
+- **Back / Forward** re-scrolls to the section for the restored fragment. This
+  matters most on phones, where the back gesture is habitual.
+- **A cold load onto `#contact`** re-scrolls past the sticky header. The
+  browser's own fragment jump ignores the header and would otherwise park the
+  heading underneath it.
+- **An empty fragment** means the top of the page, but only on a real history
+  step — the initial sync leaves the position alone so a refresh does not jump.
+
+`utils/scroll.js` also owns the mobile menu's scroll behaviour: the panel is
+absolutely positioned so opening it cannot change the document height, which
+would otherwise drag the scroll position and move the section you just
+navigated to.
 
 ---
 

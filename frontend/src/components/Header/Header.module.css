@@ -160,10 +160,21 @@
 /* ---------- Mobile panel ---------- */
 
 .mobilePanel {
+  /* Taken out of flow so opening the menu cannot change the document height.
+     The header is sticky, so the panel used to push the page content down and
+     drag the scroll position with it — the section you had just navigated to
+     visibly moved out from under you. */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
   display: grid;
   grid-template-rows: 1fr;
   border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   background-color: var(--bg);
+  box-shadow: var(--shadow-lg);
   animation: panelIn var(--dur-base) var(--ease-out);
 }
 
