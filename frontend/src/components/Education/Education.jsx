@@ -16,7 +16,7 @@ export default function Education() {
           id="education"
           eyebrow="Education"
           title="Academic background"
-          subtitle="Computer science at SRM Institute of Science and Technology, with a 9.70 CGPA."
+          subtitle="Computer science at SRM Institute of Science and Technology, with a 9.60 CGPA — plus secondary schooling at DAV Public School."
         />
 
         <div className={s.grid}>

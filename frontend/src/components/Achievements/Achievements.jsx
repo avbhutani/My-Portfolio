@@ -12,7 +12,7 @@ export default function Achievements() {
           id="achievements"
           eyebrow="Recognition"
           title="What I’m proud of"
-          subtitle="A few things worth calling out — a scholarship, a rating, and a hackathon."
+          subtitle="Four things worth calling out — a scholarship, a hackathon result, a competitive-programming streak, and a channel teaching others."
         />
 
         <div className={s.grid}>

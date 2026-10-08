@@ -1,6 +1,11 @@
 .grid {
   display: grid;
   gap: var(--space-5);
+  /* auto-fit rather than fixed column counts: the card count is data-driven
+     and has changed, and a hard-coded 3-column desktop grid stranded the 4th
+     card on a row of its own. With a 15rem floor, four cards sit on one row
+     at desktop, two at tablet, one on phones. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
 }
 
 .card {
@@ -70,18 +75,6 @@
   font-size: var(--text-base);
   color: var(--text-muted);
   line-height: var(--leading-relaxed);
-}
-
-@media (min-width: 700px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1100px) {
-  .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 /* `reveal` is a literal class from global.css, not a module class, so it must
